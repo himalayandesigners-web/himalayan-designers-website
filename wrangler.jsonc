@@ -1,0 +1,14 @@
+{
+  "name": "himalayan-designers-website",
+  "compatibility_date": "2026-09-24",
+  "workers_dev": false,
+  "assets": {
+    "directory": "./docs"
+  },
+  "routes": [
+    {
+      "pattern": "himalayandesigners.in",
+      "custom_domain": true
+    }
+  ]
+}
