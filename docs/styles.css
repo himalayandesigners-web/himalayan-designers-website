@@ -65,3 +65,9 @@ body[data-page="home"] .hero h1{font-size:clamp(3.6rem,7vw,7rem)}
 .laser-faq article{padding:27px;background:#f5f6f2}.laser-faq h3{font-size:1.25rem;margin-bottom:15px}
 .laser-faq p{color:#66746d;font-size:.9rem;line-height:1.75;margin:0}
 @media(max-width:760px){body[data-page="home"] .hero h1{font-size:clamp(2.65rem,9vw,4.7rem)}.local-service,.laser-intro{display:block;padding:70px 0}.local-service h2,.laser-intro h2{margin-bottom:24px}.laser-feature{padding:65px 0}.laser-feature-grid{grid-template-columns:1fr}.laser-feature-image{aspect-ratio:1.2}.laser-questions{padding:70px 0 85px}.laser-faq{grid-template-columns:1fr}}
+
+/* Give the full client wordmark an explicit box. Auto-sized inline blocks
+   shrink-wrapped the image and made the footer logo appear tiny. */
+.footer-grid>div:first-child .footer-brand{display:block;width:min(290px,100%);max-width:100%;line-height:0}
+.footer-grid>div:first-child .footer-brand img{display:block;width:100%;height:auto;max-width:none;object-fit:contain}
+@media(max-width:760px){.footer-grid>div:first-child .footer-brand{width:min(240px,100%)}}

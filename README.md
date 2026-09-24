@@ -34,3 +34,7 @@ After the new GitHub commit deploys, open https://himalayandesigners.in/sitemap.
 ## Favicon refresh
 
 The HTML pages reference new `hd-favicon-*` URLs and `hd-favicon.ico` so old browser-cached icons are bypassed. Deploy the entire updated `docs` directory, including the new files. Existing `favicon.ico` remains the new client symbol for browsers that fetch the default path. Browser or search-engine caches can take time to update.
+
+## Check the latest update
+
+The footer now gives the complete logo a fixed responsive width. All HTML pages request `styles.css?v=6`, `app.js?v=6` and refreshed logo URLs; the product card is named **UPVC Windows** in `docs/app.js`. Upload and commit the entire `docs` folder to the connected GitHub repository. Confirm that Cloudflare Pages reports the latest commit as deployed, then reload the custom domain. If the old text still appears, check that the live page source contains `app.js?v=6`: if it does not, the updated HTML has not reached the live site yet.
