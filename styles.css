@@ -35,3 +35,8 @@
 .footer-grid address.footer-address{display:flex;align-items:flex-start;gap:10px}
 .footer-address svg{margin-top:4px}
 .footer-address span{min-width:0}
+
+/* Client-supplied logo: light artwork on the existing dark navigation and footer. */
+.site-header .brand img,.footer-brand img{filter:none}
+.footer-brand{display:inline-block;max-width:100%}
+.footer-brand img{width:min(290px,100%);height:auto;max-width:100%;object-fit:contain}
