@@ -43,7 +43,7 @@ if(typeof window.matchMedia==='function'&&window.matchMedia('(pointer:fine) and 
   window.addEventListener('blur',()=>ring.classList.remove('is-visible'));
 }
 
-// Home banner: rotate photographs, with manual controls and a static reduced-motion view.
+// Home banner: rotate photographs automatically, including after manual navigation.
 if(currentPage==='home'){
   const hero=document.querySelector('.hero');
   const slides=[...hero.querySelectorAll('.hero-slide')];
@@ -54,8 +54,8 @@ if(currentPage==='home'){
   const pause=()=>{window.clearTimeout(timer);timer=0};
   function schedule(){
     pause();
-    if(!reduceMotion&&inView&&!document.hidden&&!hero.contains(document.activeElement)){
-      timer=window.setTimeout(()=>show(index+1),6500);
+    if(!reduceMotion&&inView&&!document.hidden){
+      timer=window.setTimeout(()=>show(index+1),4500);
     }
   }
   function show(next){
@@ -67,8 +67,6 @@ if(currentPage==='home'){
   }
   hero.querySelector('#heroPrev').addEventListener('click',()=>show(index-1));
   hero.querySelector('#heroNext').addEventListener('click',()=>show(index+1));
-  hero.addEventListener('focusin',pause);
-  hero.addEventListener('focusout',()=>window.setTimeout(schedule,0));
   document.addEventListener('visibilitychange',schedule);
   if('IntersectionObserver' in window){
     new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;schedule()},{threshold:0.15}).observe(hero);
