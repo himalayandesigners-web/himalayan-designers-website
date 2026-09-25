@@ -37,8 +37,10 @@ The HTML pages reference new `hd-favicon-*` URLs and `hd-favicon.ico` so old bro
 
 ## Check the latest update
 
-The footer now gives the complete logo a fixed responsive width. All HTML pages request `styles.css?v=7`, `app.js?v=7` and refreshed logo URLs; the product card is named **UPVC Windows** in `docs/app.js`. Upload and commit the entire `docs` folder to the connected GitHub repository. Confirm that Cloudflare Pages reports the latest commit as deployed, then reload the custom domain. If the old text still appears, check that the live page source contains `app.js?v=7`: if it does not, the updated HTML has not reached the live site yet.
+The footer now gives the complete logo a fixed responsive width. All HTML pages request `styles.css?v=8`, `app.js?v=7` and refreshed logo URLs; the product card is named **UPVC Windows** in `docs/app.js`. Upload and commit the entire `docs` folder to the connected GitHub repository. Confirm that Cloudflare Pages reports the latest commit as deployed, then reload the custom domain. If the old text still appears, check that the live page source contains `app.js?v=7`: if it does not, the updated HTML has not reached the live site yet.
 
 ## Project gallery
 
 `docs/gallery.html` displays selected client photos from `docs/assets/gallery/`. The home page links to it. The gallery offers category filters and a keyboard-accessible full-size photo viewer. Push the updated `docs/` files to the existing GitHub repository on its production branch to trigger the Cloudflare Pages deployment. Keep the Cloudflare Pages build output directory set to `docs`.
+
+The gallery has a uniform 4:5 image crop in the grid and home preview. Opening a photo shows its uncropped original. The gallery is designed for three columns on desktop and two columns on mobile.

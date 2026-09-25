@@ -4,6 +4,7 @@
   const dialog = document.getElementById('galleryDialog');
   const fullImage = document.getElementById('galleryFullImage');
   const caption = document.getElementById('galleryCaption');
+  const status = document.getElementById('galleryStatus');
   let current = 0;
   let origin = null;
   const visible = () => cards.filter(card => !card.hidden);
@@ -15,6 +16,7 @@
       filter.setAttribute('aria-pressed', String(active));
     });
     cards.forEach(card => { card.hidden = category !== 'All' && card.dataset.category !== category; });
+    status.textContent = `Showing ${visible().length} photos`;
   }));
   function display(index) {
     const shown = visible();
