@@ -42,3 +42,36 @@ if(typeof window.matchMedia==='function'&&window.matchMedia('(pointer:fine) and 
   document.addEventListener('pointerout',event=>{if(!event.relatedTarget)ring.classList.remove('is-visible')});
   window.addEventListener('blur',()=>ring.classList.remove('is-visible'));
 }
+
+// Home banner: rotate photographs, with manual controls and a static reduced-motion view.
+if(currentPage==='home'){
+  const hero=document.querySelector('.hero');
+  const slides=[...hero.querySelectorAll('.hero-slide')];
+  const markers=[...hero.querySelectorAll('.hero-slide-indicators span')];
+  const number=hero.querySelector('#heroSlideCurrent');
+  const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let index=0,timer=0,inView=true;
+  const pause=()=>{window.clearTimeout(timer);timer=0};
+  function schedule(){
+    pause();
+    if(!reduceMotion&&inView&&!document.hidden&&!hero.contains(document.activeElement)){
+      timer=window.setTimeout(()=>show(index+1),6500);
+    }
+  }
+  function show(next){
+    index=(next+slides.length)%slides.length;
+    slides.forEach((slide,i)=>slide.classList.toggle('is-active',i===index));
+    markers.forEach((marker,i)=>marker.classList.toggle('is-active',i===index));
+    number.textContent=String(index+1).padStart(2,'0');
+    schedule();
+  }
+  hero.querySelector('#heroPrev').addEventListener('click',()=>show(index-1));
+  hero.querySelector('#heroNext').addEventListener('click',()=>show(index+1));
+  hero.addEventListener('focusin',pause);
+  hero.addEventListener('focusout',()=>window.setTimeout(schedule,0));
+  document.addEventListener('visibilitychange',schedule);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(entries=>{inView=entries[0].isIntersecting;schedule()},{threshold:0.15}).observe(hero);
+  }
+  schedule();
+}
