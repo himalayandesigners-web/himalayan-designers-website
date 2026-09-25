@@ -115,7 +115,7 @@ body[data-page="home"] .hero h1{font-size:clamp(3.6rem,7vw,7rem)}
 @media(prefers-reduced-motion:reduce){.gallery-photo img,.gallery-preview-image img{transition:none}}
 
 /* Home hero slideshow. The first image remains visible when scripts are unavailable. */
-.hero-slides{position:absolute;inset:0;overflow:hidden}.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;opacity:0;transform:scale(1.02);transition:opacity 1.1s ease,transform 7s ease-out}.hero-slide.is-active{opacity:1;transform:scale(1.055)}
+.hero-slides{position:absolute;inset:0;overflow:hidden}.hero-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 55%;opacity:0;transform:scale(1.015);transition:opacity .3s ease-in-out,transform 1s ease-out}.hero-slide.is-active{opacity:1;transform:scale(1.035)}
 .hero .hero-shade{z-index:1;pointer-events:none}.hero .hero-content{z-index:2}.hero .hero-bottom{z-index:2}
 .hero-slider-controls{position:absolute;right:48px;bottom:78px;z-index:3;display:flex;align-items:center;gap:8px;color:#fff}.hero-slide-count{margin-right:14px;font-size:.68rem;letter-spacing:.14em;font-weight:800;font-variant-numeric:tabular-nums;text-shadow:0 1px 7px #0008}.hero-slide-divider{color:#e1c98c;padding:0 5px}
 .hero-slider-controls button{display:grid;place-items:center;width:43px;height:43px;border:1px solid #ffffff99;background:#0a251b70;color:#fff;border-radius:50%;font-size:1.2rem;line-height:1;backdrop-filter:blur(6px);transition:background .2s,border-color .2s,color .2s}.hero-slider-controls button:hover{background:#e8d39c;border-color:#e8d39c;color:#102e28}.hero-slider-controls button:focus-visible{outline:3px solid #e8d39c;outline-offset:3px}

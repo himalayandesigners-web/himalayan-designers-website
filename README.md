@@ -37,7 +37,7 @@ The HTML pages reference new `hd-favicon-*` URLs and `hd-favicon.ico` so old bro
 
 ## Check the latest update
 
-The footer now gives the complete logo a fixed responsive width. The site pages use updated stylesheet and script URLs and refreshed logo URLs; the product card is named **UPVC Windows** in `docs/app.js`. Upload and commit the entire `docs` folder to the connected GitHub repository. Confirm that Cloudflare Pages reports the latest commit as deployed, then reload the custom domain. If the old text still appears, check that the live home page source contains `app.js?v=9`: if it does not, the updated HTML has not reached the live site yet.
+The footer now gives the complete logo a fixed responsive width. The site pages use updated stylesheet and script URLs and refreshed logo URLs; the product card is named **UPVC Windows** in `docs/app.js`. Upload and commit the entire `docs` folder to the connected GitHub repository. Confirm that Cloudflare Pages reports the latest commit as deployed, then reload the custom domain. If the old text still appears, check that the live home page source contains `app.js?v=10`: if it does not, the updated HTML has not reached the live site yet.
 
 ## Project gallery
 
@@ -45,4 +45,4 @@ The footer now gives the complete logo a fixed responsive width. The site pages 
 
 The gallery has a uniform 4:5 image crop in the grid and home preview. Opening a photo shows its uncropped original. The gallery is designed for three columns on desktop and two columns on mobile.
 
-The home page banner now rotates through six images every 4.5 seconds, with previous/next buttons. It keeps rotating after either arrow is clicked; it pauses while the tab is hidden or the banner is out of view. Visitors who request reduced motion can change images manually. The home page loads `styles.css?v=9` and `app.js?v=9`.
+The home page banner now rotates through six images every 1 second, with previous/next buttons. It keeps rotating after either arrow is clicked; it pauses while the tab is hidden or the banner is out of view. Visitors who request reduced motion can change images manually. The home page loads `styles.css?v=10` and `app.js?v=10`.

@@ -55,7 +55,7 @@ if(currentPage==='home'){
   function schedule(){
     pause();
     if(!reduceMotion&&inView&&!document.hidden){
-      timer=window.setTimeout(()=>show(index+1),4500);
+      timer=window.setTimeout(()=>show(index+1),1000);
     }
   }
   function show(next){
